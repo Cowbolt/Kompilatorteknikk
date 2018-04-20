@@ -1,0 +1,22 @@
+1.
+New rule set
+
+S -> c s a n O
+
+O -> E O | ê
+
+E -> b | v |p
+
+This solves the ambiguity of which expansion to take when reaching L by expanding whenever the string is unfinished.
+U is superfluous,so we remove it.
+
+2.
+
+FIRST(S): {c}
+FIRST(O): {b, v, p}
+FIRST(E): {b, v, p}
+nullable(O): yes, only nullable nonterminal.
+
+FOLLOW(S): {$}
+FOLLOW(O): {$}, O always expands E to its left.
+FOLLOW(E): {b, v, p}.

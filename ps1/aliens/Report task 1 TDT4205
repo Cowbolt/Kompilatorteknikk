@@ -1,0 +1,8 @@
+Report task 1 TDT4205:
+
+In the first task, I created a DFA describing a machine which accepts input words that rhyme with 'despacito', shown in dfa-1_1.png. The states in this DFA are unnumbered, as I was unsure whether to number them DFA or BFA-wise (I opted for DFA in the second diagram).
+The regex expression, '.*((e+n?)|[(qu+)rvcn]i+)to+', first matches any letters preceding the end of the word, then branches off depending on whether the rhyme ends up at the 'i'-node, then ends with 't' and one or more 'o's.
+
+The second task has a DFA for matching one of five words, and is numbered in a DFA-manner (which proved useful for instantiating the transition table).
+The scanner file first defines a few useful constants. Then I define a function for converting a letter to its corresponding entry in the table. init_transtab first sets all entries to 0, then sets all valid transitions to point to the next state. This is so that any invalid transition redirects to the inital state 0.
+The next function simply reads the next character from the input file, moves to the next state, then checks to see whether we are in a goal state. In the case that we unexpectedly reach the end of file without having encountered the stop word, we return STOP anyways.

@@ -1,0 +1,23 @@
+1.1
+Three address code is a low-level intermediate representation that is useful as a step in the process of converting source language code to machine code. It consists of instructions of the form z = x op y that apply op to values x and y and place the result in z. Its instructions resemble machine-independent assembly instructions, and can therefore be translated into architecture-specific code without requiring many steps. The three address codes presented in this course contain (among others) copy, call, logical and arithmetic instructions that operate on a stack of memory locations.
+
+1.2
+Using TAC-syntax provided by appendix.
+
+main:
+	BeginFunc 36;
+	t0 = 2;
+	a = t0;
+	t1 = 2*a
+	t2 = t1 + 3;
+	b = t2;
+	t3 = b == 7;
+	IFZ t3 Goto ELSE;
+	t4 = 4;
+	c = t4;
+	Goto END;
+ELSE:
+	t5 = 6;
+	c = t5;
+END:
+	EndFunc;

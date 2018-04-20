@@ -1,0 +1,64 @@
+Closure(I)
+
+I: S -> .E
+
+I0:	
+	S -> .E
+	E -> .E + T
+	E -> .T
+	T -> .int(E)
+	T -> .int
+
+Goto(I0,E):
+	I1:
+		S -> E.
+		E -> E. + T
+
+	Goto(I1,+)
+		I4:
+			E -> E + .T
+			T -> .int(E)
+			T -> .int
+
+		Goto(I4,int) -> I3
+		Goto(I4,T)
+			I6:
+				E -> E + T.
+
+
+Goto(I0,T)
+	I2:
+		E -> T.
+
+Goto(I0,int)	
+	I3:
+		T -> int.(E)
+		T -> int.
+
+	Goto(I3,'(')
+		I5:
+			T -> int(.E)
+			E -> .E + T
+			E -> .T
+			T -> .int(E)
+			T -> .int
+
+		Goto(I5, T) -> I2
+		Goto(I5, int) -> I3
+		Goto(I5, E):
+			I7:
+				T -> int(E.)
+				E -> E. + T
+				
+			Goto(I7,+) -> I4
+			Goto(I7, ')'):
+				I8:
+					T -> int(E).
+
+
+I0 -> I1, I2, I3
+I1 -> I4
+I4 -> I3, I6
+I3 -> I5
+I5 -> I2, I3, I7
+I7 -> I4, I8

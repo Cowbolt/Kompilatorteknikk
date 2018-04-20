@@ -1,0 +1,53 @@
+ PROGRAM
+ GLOBAL_LIST
+  FUNCTION
+   IDENTIFIER_DATA(funcall)
+   (nil)
+   BLOCK
+    DECLARATION_LIST
+     DECLARATION
+      VARIABLE_LIST
+       IDENTIFIER_DATA(x)
+    STATEMENT_LIST
+     ASSIGNMENT_STATEMENT
+      IDENTIFIER_DATA(x)
+      EXPRESSION((null))
+       IDENTIFIER_DATA(my_function)
+       EXPRESSION_LIST
+        NUMBER_DATA(5)
+        NUMBER_DATA(10)
+     RETURN_STATEMENT
+      NUMBER_DATA(0)
+  FUNCTION
+   IDENTIFIER_DATA(my_function)
+   VARIABLE_LIST
+    IDENTIFIER_DATA(s)
+    IDENTIFIER_DATA(t)
+   BLOCK
+    STATEMENT_LIST
+     PRINT_STATEMENT
+      STRING_DATA("Parameter s is")
+      IDENTIFIER_DATA(s)
+      STRING_DATA("t is ")
+      IDENTIFIER_DATA(t)
+     RETURN_STATEMENT
+      NUMBER_DATA(0)
+String table:
+0: "Parameter s is"
+1: "t is "
+-- 
+Globals:
+my_function: function 1:
+	2 local variables, 2 are parameters:
+	t: parameter 1
+	s: parameter 0
+funcall: function 0:
+	1 local variables, 0 are parameters:
+	x: local var 0
+-- 
+Linked local var 0 ('x')
+Linked function 1 ('my_function')
+Linked string 0
+Linked parameter 0 ('s')
+Linked string 1
+Linked parameter 1 ('t')

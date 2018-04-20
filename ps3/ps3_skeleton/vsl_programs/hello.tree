@@ -1,0 +1,18 @@
+ PROGRAM
+ GLOBAL
+  FUNCTION
+   IDENTIFIER_DATA(hello)
+   (nil)
+   STATEMENT
+    BLOCK
+     STATEMENT_LIST
+      STATEMENT_LIST
+       STATEMENT
+        PRINT_STATEMENT
+         PRINT_LIST
+          PRINT_ITEM
+           STRING_DATA("Hello, world!")
+      STATEMENT
+       RETURN_STATEMENT
+        EXPRESSION((null))
+         NUMBER_DATA(0)
