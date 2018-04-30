@@ -201,7 +201,6 @@ add_string ( node_t *string )
         n_string_list *= 2;
         string_list = realloc ( string_list, n_string_list * sizeof(char *) );
     }
-        
 }
 
 

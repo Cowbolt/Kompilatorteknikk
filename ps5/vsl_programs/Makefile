@@ -1,3 +1,4 @@
+LDFLAGS=-fno-pie -no-pie
 TARGETS=$(shell ls *.vsl | sed s/\.vsl//g)
 all: ${TARGETS}
 %: %.s

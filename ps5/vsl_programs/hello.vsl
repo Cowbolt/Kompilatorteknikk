@@ -1,5 +1,4 @@
-FUNC hello ()
+FUNC hello (a,b,c,d,e,f,g,h)
 BEGIN
-    PRINT "Hello, world!"
-    RETURN 0
+    PRINT (a*b*c*d*e*f*g*h) 
 END

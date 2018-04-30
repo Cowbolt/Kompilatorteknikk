@@ -17,7 +17,7 @@
 #include "ir.h"
 
 // Token definitions and other things from bison, needs def. of node type
-#include "y.tab.h"
+#include "../src/y.tab.h"
 
 /* This is generated from the bison grammar, calls on the flex specification */
 int yyerror ( const char *error );
@@ -46,5 +46,14 @@ void print_symbol_table ( void );
 void destroy_symbol_table ( void );
 
 void generate_program ( void );
-
+static void generate_stringtable ( void );
+static void generate_globals ( void );
+static void generate_function ( symbol_t *fun );
+static void traverse_subtree ( node_t *node );
+static void handle_relation ( node_t *rel, char *label, int num );
+static void print_data ( node_t *data );
+static size_t get_var_address ( symbol_t *var, symbol_t **locals, size_t *n_locals );
+static char *get_value ( node_t *value );
+static void generate_main ( symbol_t *first );
+static void handle_expression ( node_t *exp);
 #endif

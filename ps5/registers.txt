@@ -1,0 +1,27 @@
+– RAX (Result accumulator)
+– RBX (Array base pointer)
+– RCX (Counter)
+– RDX (Data destination pointer)
+– RSI (String op. Source)
+– RDI (String op. Destination)
+– RSP (Stack pointer)
+– RBP (Frame pointer)
+
+argument arrays: RDI, RSI, RDX, RDX, r8, r9
+
+movq $3, %rax /* Copy constant 3 to RAX */
+movq %rax, %rbx /* Copy contents of RAX to RBX */
+movq %rax, (%rsp) /* Copy contents of RAX to addr. RSP */
+movq 8(%rbp), %rbx /* Copy contents of adr RBP+8 to RBX */
+
+addq op1, op2 /* Adds op1 into op2 */
+
+subq op1, op2 /* Subtract op1 from op2 */
+
+incq op1 /* increments */
+decq op1 /* decrements */
+
+pushq op1
+/* subtract 8 (bytes - size of quadword) from RSP register, writes op1 into resulting address (%rsp) */
+
+popq op1 /* writes (%rsp) into op1, adds 8 to RSP register */

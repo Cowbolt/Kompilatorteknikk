@@ -108,7 +108,7 @@ String table:
 7: "Their ratio is c:="
 8: "(-c):="
 9: "The sum of their squares is "
--- 
+--
 Globals:
 main: function 0:
 	4 local variables, 1 are parameters:
